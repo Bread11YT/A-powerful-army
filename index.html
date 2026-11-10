@@ -149,6 +149,7 @@ function draw(){const cs=getComputedStyle(document.documentElement),COL={a:cs.ge
   cx.fillStyle='rgba(60,20,10,.18)';cx.fillRect(0,0,T*.6,H*T);
   cx.textAlign='center';cx.textBaseline='middle';
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){const b=G.grid[y][x];if(!b)continue;
+    cx.fillStyle=({house:'#c9a77c',farm:'#d8c45a',tower:'#9aa1a8',wall:'#7b7b7b',barracks:'#b5744a'})[b.t];cx.fillRect(x*T+2,y*T+2,T-4,T-4);cx.strokeStyle='rgba(0,0,0,.5)';cx.lineWidth=1;cx.strokeRect(x*T+2.5,y*T+2.5,T-5,T-5);
     cx.font='26px serif';cx.fillText(B[b.t].e,x*T+T/2,y*T+T/2+1);if(b.hp<b.mx)bar(x*T+4,y*T+T-7,T-8,b.hp/b.mx,'#d9a441')}
   cx.font='36px serif';cx.fillText('🏰',(KX+.5)*T,(KY+.5)*T);bar(KX*T,KY*T+T-4,T,G.hp/200,'#4caf50');
   cx.font='24px serif';
